@@ -13,11 +13,17 @@ public class The_Halving_Machine {
 
             for (int i = num; i !=1; i--) {
 
-                if (num % 2 == 0) {
+                if ((num % 2 == 0) && num > 1 ){
 
                     num /= 2;
 
                     System.out.println(num);
+
+
+
+                }
+                else if(num ==1){
+                    break;
 
                 }
 

@@ -21,18 +21,16 @@ public class Problem7 {
 
         //2
 
-        int count = 4;
+            for (int i = 4; i >= 1; i--) {
 
-        for (int i = 1; i <= count; i++) {
+         for (int j = 0; j <i; j++) {
 
-            for (int j = count - i + 1; j >= 1; j--) {
+            System.out.print("8");
+         }
 
-                System.out.print("8");
-            }
-
-            System.out.println();
-        }
-        System.out.println();
+         System.out.println();
+      }
+      System.out.println();
         //3
 
 

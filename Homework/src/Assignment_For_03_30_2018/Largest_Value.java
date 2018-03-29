@@ -18,6 +18,6 @@ public class Largest_Value {
             }
 
         }
-        System.out.println("Max Value " +boxNum[maxValue] + " in the "+ index+" position");
+        System.out.println("Max Value is " +boxNum[maxValue] + " in the "+ index+"th position");
     }
 }

@@ -8,7 +8,6 @@ public class TicTacToe {
         Scanner userInput = new Scanner(System.in);
         boolean game = true;
         String playerOneMark = "x", player2 = "y";
-
         int row, column;
         String[][] board = new String[3][3];
         for (int i = 0; i < board.length; i++) {
@@ -17,7 +16,6 @@ public class TicTacToe {
                 board[i][j] = " ";
             }
         }
-
         while (game == true) {
 
 
@@ -47,11 +45,12 @@ public class TicTacToe {
 
                     }
                     System.out.println();
-                    }
+
 
                 }
 
             }
+
         }
     }
 }

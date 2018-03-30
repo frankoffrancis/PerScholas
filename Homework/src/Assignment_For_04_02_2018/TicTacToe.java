@@ -1,15 +1,14 @@
 package Assignment_For_04_02_2018;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
-public class TicTacToe {
 
+public class TicTacToe {
     public static void main(String[] args) {
 
         Scanner userInput = new Scanner(System.in);
         boolean game = true;
-        String player1 = "x", player2 = "y";
+        String playerOneMark = "x", player2 = "y";
+
         int row, column;
         String[][] board = new String[3][3];
         for (int i = 0; i < board.length; i++) {
@@ -20,68 +19,39 @@ public class TicTacToe {
         }
 
         while (game == true) {
-            System.out.println("what row do you want to place your mark Player One");
-            row = userInput.nextInt();
-            System.out.println("what column do you want to place your mark player one");
-            column = userInput.nextInt();
-            if (board[row][column] != " ") {
-                System.out.println("That place has already been filled please try again");
-                System.out.println("what row do you want to place your mark Player One");
+
+
+            for (int i = 1; i <= 2; i++) {
+                System.out.println("what row do you want to place your mark Player " + i);
                 row = userInput.nextInt();
-                System.out.println("what column do you want to place your mark player one");
+                System.out.println("what column do you want to place your mark player " + i);
                 column = userInput.nextInt();
-            }
-            else {
-                board[row][column] = player1;
-            }
-            System.out.println("Current board after Player One turn");
-            for (int i = 0; i < board.length; i++) {
-                for (int j = 0; j < board.length; j++) {
-
-                    System.out.print(board[i][j]);
+                if (row < 0 || row > 2 || column < 0 || column > 2) {
+                    i -= 1;
+                    continue;
                 }
-                System.out.println();
 
-            }
-            System.out.println("what row do you want to place your mark Player Two");
-            row = userInput.nextInt();
-            System.out.println("what column do you want to place your mark player Two");
-            column = userInput.nextInt();
-            if (board[row][column] != " ") {
-                System.out.println("That place has already been filled please try again");
-                System.out.println("what row do you want to place your mark Player Two");
-                row = userInput.nextInt();
-                System.out.println("what column do you want to place your mark player Two");
-                column = userInput.nextInt();
-            } else {
-                board[row][column] = player2;
-            }
-
-            System.out.println("Current board after Player Two turn");
-            for (int i = 0; i < board.length; i++) {
-                for (int j = 0; j < board.length; j++) {
-
-                    System.out.print(board[i][j]);
+                if (board[row][column] != " ") {
+                    System.out.println("That place has already been filled please try again");
+                    i -= 1;
+                    continue;
+                } else if (i == 1) {
+                    board[row][column] = playerOneMark;
+                } else {
+                    board[row][column] = player2;
                 }
-                System.out.println();
+                System.out.println("Current board after Player " + i);
+                for (int m = 0; m < board.length; m++) {
+                    for (int j = 0; j < board.length; j++) {
+                        System.out.print(board[m][j]);
 
-            }
-            for (int i = 0; i < board.length; i++) {
-                for (int j = 0; j < board.length; j++) {
-
-                    if(board[i][j] !=" "){
-
-                            game = false;
                     }
-                    else {
-                        game =true;
+                    System.out.println();
                     }
-                }
+
                 }
 
+            }
         }
     }
 }
-
-
-

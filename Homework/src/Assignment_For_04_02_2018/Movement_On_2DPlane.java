@@ -53,6 +53,9 @@ public class Movement_On_2DPlane {
                     uAnswer=userInput.nextLine();
 
             }
+            if(row<0 || row> plane.length || columns<0 || columns> plane[0].length){
+                
+            }
             for(int i =0; i<plane.length; i++){
                 for(int j =0; )
 

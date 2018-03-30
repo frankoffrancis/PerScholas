@@ -2,7 +2,7 @@ package Assignment_For_04_02_2018;
 
 import java.util.Scanner;
 
-public class TicTacToeVer2 {
+public class TicTacToe {
     public static void main(String[] args) {
 
         Scanner userInput = new Scanner(System.in);

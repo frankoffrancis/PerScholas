@@ -54,6 +54,9 @@ public class Movement_On_2DPlane {
 
             }
             if(row<0 || row> plane.length || columns<0 || columns> plane[0].length){
+                   System.out.println("You are out of bound please try again");
+                continue ;
+            }
                 
             }
             for(int i =0; i<plane.length; i++){

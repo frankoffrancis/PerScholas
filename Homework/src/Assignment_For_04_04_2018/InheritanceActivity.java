@@ -6,10 +6,11 @@ public class InheritanceActivity {
         Employee manager = new Manager(126534,"Peter","Chennai India",237844,65000 );
         Employee trainee =  new Trainee(29846, "Jack","Mumbai India",442085,45000);
        //Problem 1
-        manager.calculateSalary();
-        trainee.calculateSalary();
+       System.out.println("Peter has a salary of $"+  manager.calculateSalary());
+        System.out.println("Jack has a salary of $"+trainee.calculateSalary());
         // Problem 2
-        manager.calculateTransportAllowance();
-        trainee.calculateTransportAllowance();
+        System.out.println("Peter has a salary of $"+(manager.calculateSalary()-manager.calculateTransportAllowance())+" after subtracting transport allowance");
+        System.out.println("Jack has a salary of $"+(trainee.calculateSalary() -trainee.calculateTransportAllowance()) +" after subtracting transport allowance");
+
     }
 }

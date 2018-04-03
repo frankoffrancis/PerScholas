@@ -30,5 +30,6 @@ public class Employee {
     public void calculateTransportAllowance(){
         double transportAllowance;
         transportAllowance = .1 *basicSalary;
+        System.out.println("Employee "+employeeName + " has a transportation allowance of "+transportAllowance);
     }
 }

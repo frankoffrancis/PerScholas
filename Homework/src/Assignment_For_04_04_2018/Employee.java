@@ -21,15 +21,15 @@ public class Employee {
         employeePhone =phone;
     }
 
-    public void calculateSalary(){
+    public double calculateSalary(){
         double salary;
         salary = basicSalary+(basicSalary*(specialAllowance/100))+(basicSalary*(hra/100));
-        System.out.println( "Employee: " +employeeName+" has a basic salary of " +salary);
-
+        return salary;
     }
-    public void calculateTransportAllowance(){
+    public double calculateTransportAllowance(){
         double transportAllowance;
         transportAllowance = .1 *basicSalary;
-        System.out.println("Employee "+employeeName + " has a transportation allowance of "+transportAllowance);
+
+        return transportAllowance;
     }
 }

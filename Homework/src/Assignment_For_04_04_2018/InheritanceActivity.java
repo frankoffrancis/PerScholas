@@ -9,8 +9,8 @@ public class InheritanceActivity {
        System.out.println("Peter has a salary of $"+  manager.calculateSalary());
         System.out.println("Jack has a salary of $"+trainee.calculateSalary());
         // Problem 2
-        System.out.println("Peter has a salary of $"+(manager.calculateSalary()-manager.calculateTransportAllowance())+" after subtracting transport allowance");
-        System.out.println("Jack has a salary of $"+(trainee.calculateSalary() -trainee.calculateTransportAllowance()) +" after subtracting transport allowance");
+        System.out.println("Peter has a transport allowance of "+manager.calculateTransportAllowance());
+        System.out.println("Jack has a transport allowance of "+trainee.calculateTransportAllowance());
 
     }
 }

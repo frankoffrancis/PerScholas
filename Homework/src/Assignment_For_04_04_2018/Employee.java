@@ -27,4 +27,8 @@ public class Employee {
         System.out.println( "Employee: " +employeeName+" has a basic salary of " +salary);
 
     }
+    public void calculateTransportAllowance(){
+        double transportAllowance;
+        transportAllowance = .1 *basicSalary;
+    }
 }

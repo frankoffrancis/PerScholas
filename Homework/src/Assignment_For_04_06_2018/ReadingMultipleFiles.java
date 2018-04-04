@@ -19,16 +19,17 @@ public class ReadingMultipleFiles  {
         File codeName = new File(coruseNa);
         Scanner usInput = new Scanner(codeName);
         ArrayList<String> words = new ArrayList<String>();
-               ArrayList<String> word = new ArrayList<String>();
+               ArrayList<String> word= new ArrayList<String>();
         while(uInput.hasNextLine() && usInput.hasNextLine() ){
             words.add(uInput.nextLine());
             word.add(usInput.nextLine());
         }
 
-        for(String b : words) {
-
+        for(int i=0; i <word.size(); i++){
+            System.out.println(words.get(i)+word.get(i));
 
         }
+
     }
      catch (FileNotFoundException e){
 

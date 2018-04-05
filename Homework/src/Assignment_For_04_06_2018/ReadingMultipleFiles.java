@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ReadingMultipleFiles  {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
            try{
                String a=" ",d= " ";
         // file for courseCode

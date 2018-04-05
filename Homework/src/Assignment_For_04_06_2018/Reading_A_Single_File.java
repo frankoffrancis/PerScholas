@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Reading_A_Single_File {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
 
         try{
         // file location

@@ -26,7 +26,7 @@ public class There_Has_to_be_a_Better_Way {
             }
             for(Student output : last) {
 
-                System.out.println(output.getName());
+                System.out.println(output.getName()+output.getGrade()+output.getGpa());
 
             }
 

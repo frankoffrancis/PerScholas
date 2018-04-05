@@ -32,15 +32,16 @@ public class Students_Revisited {
                 studentsGrade[i] = new Student();
 
                 studentsName[i].setName(nameRead.nextLine());
-                studentsGrade[i].setGrade(Integer.parseInt(gradesRead.nextLine()));
-                studentsGPA[i].setGpa(Double.parseDouble(gpaRead.nextLine()));
+                studentsGrade[i].setGrade(gradesRead.nextInt());
+                studentsGPA[i].setGpa(gpaRead.nextDouble());
+
 
 
 
 
             }
             for(int i =0; i<studentsName.length; i++){
-                studentsName[i].getInfo();
+                studentsName[i].getInfo( studentsName[i].getName(), studentsGrade[i].getGrade(),studentsGPA[i].getGpa());
             }
 
         }

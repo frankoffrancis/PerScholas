@@ -13,7 +13,7 @@ public class There_Has_to_be_a_Better_Way {
         File studentFile = new File(studentPath);
 
         try {
-            Scanner inputFile = new Scanner(studentPath);
+            Scanner inputFile = new Scanner(studentFile);
             inputFile.nextLine();
             while(inputFile.hasNextLine()) {
                 String [] section = inputFile.nextLine().split(",");

@@ -3,42 +3,57 @@ package Assignment_For_04_11_2018.CoreJava.DAO;
 
 import Assignment_For_04_11_2018.CoreJava.Models.Student;
 
+import java.io.IOException;
 import java.util.List;
-
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
 public class StudentDAO {
     public List<Student>  getStudents(){
-ArrayList<Student>  studentInSchool = new ArrayList<Student>();
-        Student s = new Student();
+
+        String sLocation = "C:\\Users\\frank\\Desktop\\students.csv";
+        File sFile = new File(sLocation);
+
+        ArrayList<Student> sList = new ArrayList<Student> ();
         try {
-            String studentLocation = "C:\\Users\\Students\\Desktop\\students.csv";
-            File studentFile = new File(studentLocation);
-            Scanner studentReader = new Scanner(studentFile);
+            Scanner sReader = new Scanner(sFile);
 
-            while(studentReader.hasNextLine()){
-                String students = studentReader.nextLine();
-                ArrayList<String[]> holder = new ArrayList<> ();
-                holder.add(students.split(","));
+            while(sReader.hasNextLine()){
 
-                for(String[] holder1 : holder) {
-                     s = new Student(holder1[0], holder1[1], holder1[2]);
-                }
-                studentInSchool.add(s);
+                String[] sHolder  = sReader.nextLine().trim().split(",");
 
+                Student s = new Student(sHolder[0],sHolder[1],sHolder[2]);
+                sList.add(s);
             }
-
         }
-        catch (Exception e){
+        catch (IOException e){
 
-            System.out.println("File not found.");
+            System.out.println("File not found");
         }
-        return studentInSchool;
+        return sList;
     }
 
     public Student getStudentByEmail(List<Student> studentList, String studentEmail){
 
-    }
+       for(Student smail : studentList){
 
+           if(smail.getEmail().equals(studentList)){
+
+               return smail;
+           }
+       }
+
+        return new Student();
+    }
     public boolean validateUser(List<Student> studentList, String studentEmail, String studentPass){
 
+        for(Student sUser: studentList){
+
+            if(sUser.getEmail().equals(studentEmail) && sUser.getPass().equals(studentPass)){
+
+                return true;
+            }
+        }
+        return false;
     }
 }

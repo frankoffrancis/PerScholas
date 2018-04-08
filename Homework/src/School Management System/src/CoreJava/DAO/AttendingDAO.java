@@ -68,11 +68,14 @@ public class AttendingDAO {
     }
     public void saveAttending(List<Attending> attending){
 
+
         try{
-            FileWriter overWrite = new FileWriter(attendingFile,false);
+            FileWriter overWrite = new FileWriter(attendingFile,true);
                 for(Attending change : attending){
                     overWrite.write(String.format("%s,%s,%s\r\n" ,change.getCourseID(), change.getStudentEmail()));
+
                 }
+            overWrite.close();
         }
         catch(IOException e){
             System.out.println("File not found");

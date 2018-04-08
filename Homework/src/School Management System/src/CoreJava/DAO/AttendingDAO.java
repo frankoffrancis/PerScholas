@@ -4,17 +4,18 @@ import CoreJava.Models.Attending;
 import CoreJava.Models.Course;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class AttendingDAO {
-
+    String attendingLocation = "C:\\Users\\frank\\Desktop\\attending.csv\\";
+    File attendingFile = new File(attendingLocation);
    public List<Attending> getAttending(){
 
-        String attendingLocation = "C:\\Users\\frank\\Desktop\\attending.csv\\";
-        File attendingFile = new File(attendingLocation);
+
         List<Attending> attendingList = new ArrayList<>();
 
         try{
@@ -67,7 +68,15 @@ public class AttendingDAO {
     }
     public void saveAttending(List<Attending> attending){
 
-        for(Attending a : attending);
+        try{
+            FileWriter overWrite = new FileWriter(attendingFile,false);
+                for(Attending change : attending){
+                    overWrite.write(String.format("%s,%s,%s\r\n" ,change.getCourseID(), change.getStudentEmail()));
+                }
+        }
+        catch(IOException e){
+            System.out.println("File not found");
+        }
     }
 
 }

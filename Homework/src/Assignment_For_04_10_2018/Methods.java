@@ -18,13 +18,20 @@ public class Methods {
 
 
     }
-   public boolean searching(ArrayList<String> array, String searchingColor ){
+   public String searching(ArrayList<String> array, String searchingColor ){
 
         boolean isFound =false;
-            if(array.contains(searchingColor.toLowerCase())){
-                isFound = true;
-            }
-            return isFound;
+        String color =" ";
+           for(String a : array){
+               if(a.equalsIgnoreCase(searchingColor)){
+                   isFound=true;
+               }
+
+           }
+           if(isFound == true ){
+               color =searchingColor;
+           }
+            return color;
    }
 
    public String update(ArrayList<String> array, int index, String value ){

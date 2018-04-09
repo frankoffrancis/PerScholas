@@ -31,7 +31,7 @@ public class Runner {
         String colorSearch;
         System.out.println("Which color are you looking for");
         colorSearch=uInput.nextLine();
-        if(m.searching(colors,colorSearch)){
+        if(m.searching(colors,colorSearch).equalsIgnoreCase(colorSearch)){
             System.out.println("We found your color : "+colorSearch);
         }
         else {

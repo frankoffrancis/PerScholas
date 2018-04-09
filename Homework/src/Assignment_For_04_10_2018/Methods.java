@@ -1,6 +1,8 @@
 package Assignment_For_04_10_2018;
 
+        import java.lang.reflect.Array;
         import java.util.ArrayList;
+        import java.util.Arrays;
         import java.util.Collections;
 
 public class Methods {
@@ -85,6 +87,11 @@ public class Methods {
         ArrayList <String>newArray = new ArrayList<>();
         b.addAll(a);
         return b;
+    }
+    public ArrayList convert(Integer i[]){
+
+        ArrayList<Integer> newList = new ArrayList<Integer>(Arrays.asList(i));
+        return newList;
     }
 }
 

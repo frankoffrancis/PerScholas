@@ -57,6 +57,7 @@ public class Runner {
         m.looping(colors);
         // convert
         Integer i[] ={1,2,7,5,5,3};
-        
+        m.convert(i);
+        System.out.println(m.convert(i));
     }
 }

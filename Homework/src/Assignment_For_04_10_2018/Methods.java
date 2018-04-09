@@ -74,6 +74,18 @@ public class Methods {
         }
         return holder;
     }
+    public void looping (ArrayList<String> s){
+
+        for(String a : s){
+            System.out.println(a);
+        }
+    }
+
+    public ArrayList appending(ArrayList<String> a,ArrayList<String> b){
+        ArrayList <String>newArray = new ArrayList<>();
+        b.addAll(a);
+        return b;
+    }
 }
 
 

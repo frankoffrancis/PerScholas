@@ -55,5 +55,8 @@ public class Runner {
         System.out.println(m.appending(colors,color2));
        //looping
         m.looping(colors);
+        // convert
+        Integer i[] ={1,2,7,5,5,3};
+        
     }
 }

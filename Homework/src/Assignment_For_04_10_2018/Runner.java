@@ -40,6 +40,15 @@ public class Runner {
         //sorting
         //m.sorting(colors);
         // reverse
-       System.out.print( m.reversing(colors));
+       System.out.println ( m.reversing(colors));
+        // copying
+       System.out.println( m.copying(colors));
+       // comparing
+        ArrayList<String>  color2 = new ArrayList<>();
+        color2.add("Green");
+        color2.add("Orange");
+        color2.add("Pink");
+        color2.add("Yellow");
+       System.out.println( m.comparing(colors,color2));
     }
 }

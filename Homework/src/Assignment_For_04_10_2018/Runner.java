@@ -50,5 +50,10 @@ public class Runner {
         color2.add("Pink");
         color2.add("Yellow");
        System.out.println( m.comparing(colors,color2));
+
+       //Appending
+        System.out.println(m.appending(colors,color2));
+       //looping
+        m.looping(colors);
     }
 }

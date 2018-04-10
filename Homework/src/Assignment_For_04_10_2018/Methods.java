@@ -1,18 +1,18 @@
 package Assignment_For_04_10_2018;
 
-        import java.lang.reflect.Array;
-        import java.util.ArrayList;
-        import java.util.Arrays;
-        import java.util.Collections;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Methods {
 
-    public void Iterting(ArrayList<String> array){
-
+    public String Iterting(ArrayList<String> array){
+        String val =" ";
         for(String b: array){
-            System.out.println("Today's Color is ["+b+"]");
+            val="Today's Color is "+b;
         }
-
+        return val;
     }
     public String removing(ArrayList<String> array, int index){
 
@@ -34,9 +34,17 @@ public class Methods {
         return color;
     }
 
-    public String update(ArrayList<String> array, int index, String value ){
+    public void update(ArrayList<String> array,  String value ){
+        int counter =0;
 
-        return array.set(index,value);
+        for(String a : array){
+            counter++;
+            if(counter== 4){
+                array.set(counter,value);
+            }
+        }
+
+
     }
     // get back to it.
     public void sorting(ArrayList<String> array) {

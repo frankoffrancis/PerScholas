@@ -12,7 +12,7 @@ public class Printing_Out_Obe_By_One {
         firstQuestion.put(4, "Four");
         firstQuestion.put(5, "Five");
 
-        for(int i=3; i <firstQuestion.size(); i++){
+        for(int i=4; i <firstQuestion.size(); i++){
             System.out.println(firstQuestion);
         }
         for(Map.Entry<Integer,String> a : firstQuestion.entrySet()){

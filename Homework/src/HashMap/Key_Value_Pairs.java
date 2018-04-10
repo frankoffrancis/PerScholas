@@ -21,7 +21,7 @@ public class Key_Value_Pairs {
             System.out.println(s.getKey()+" "+ s.getValue());
         } 
         /**
-         * The values for key 2 and 4 changed because I overwrote them. 
+         * The values for key 2 and 4 changed because I overwrote them.Since one key can only hold one value.
          */
     }
 

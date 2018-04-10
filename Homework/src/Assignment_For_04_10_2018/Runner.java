@@ -17,12 +17,12 @@ public class Runner {
         }
         Methods m = new Methods();
         // Iterating
-        m.Iterting(colors);
+       System.out.println( m.Iterting(colors));
 
         // updating
-        m.update(colors,4, "Magenta");
+        m.update(colors,"Magenta");
         // removing
-       m.removing(colors,3);
+        m.removing(colors,3);
         for(String cTypes : colors){
             System.out.println(cTypes);
         }
@@ -38,24 +38,25 @@ public class Runner {
             System.out.println("We couldn't find your color");
         }
         //sorting
-        //m.sorting(colors);
+        m.sorting(colors);
         // reverse
-       System.out.println ( m.reversing(colors));
+        System.out.println ( m.reversing(colors));
         // copying
-       System.out.println( m.copying(colors));
-       // comparing
+        System.out.println( m.copying(colors));
+        // comparing
         ArrayList<String>  color2 = new ArrayList<>();
         color2.add("Green");
         color2.add("Orange");
         color2.add("Pink");
         color2.add("Yellow");
-       System.out.println( m.comparing(colors,color2));
+        System.out.println( m.comparing(colors,color2));
 
-       //Appending
+        //Appending
         System.out.println(m.appending(colors,color2));
-       //looping
+        //looping
         m.looping(colors);
         // convert
+        // I don't understand but i think i did it right
         Integer i[] ={1,2,7,5,5,3};
         m.convert(i);
         System.out.println(m.convert(i));

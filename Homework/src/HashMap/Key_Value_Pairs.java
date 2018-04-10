@@ -20,6 +20,9 @@ public class Key_Value_Pairs {
         for(Map.Entry<Integer,String> s : firstQuestion.entrySet()){
             System.out.println(s.getKey()+" "+ s.getValue());
         } 
+        /**
+         * The values for key 2 and 4 changed because I overwrote them. 
+         */
     }
 
 }

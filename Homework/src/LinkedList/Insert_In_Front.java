@@ -12,11 +12,8 @@ public class Insert_In_Front {
         shapes.add("Square");
         shapes.add("line");
         // adding three new shapes in front of existing shapes
-        String[]newShapes= {"hexagon", "Pentagon", "Octagon"};
-        for(int i=0; i<newShapes.length; i++){
-            shapes.addFirst(newShapes[i]);
-
-        }
+        String newShapes = "Octagon";
+        shapes.addFirst(newShapes);
         // print out  all of the shapes
         for(int i =0; i<shapes.size(); i++){
             System.out.println(shapes.get(i));

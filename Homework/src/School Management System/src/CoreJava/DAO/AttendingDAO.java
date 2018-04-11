@@ -21,7 +21,7 @@ public class AttendingDAO {
         try{
             Scanner attendingReader = new Scanner(attendingFile);
             while(attendingReader.hasNextLine()){
-                String [] allAttending = attendingReader.nextLine().trim().split(",");
+                String [] allAttending = attendingReader.nextLine().split(",");
                 Attending a = new Attending(Integer.parseInt(allAttending[0]),allAttending[1]);
                 attendingList.add(a);
             }
@@ -52,7 +52,7 @@ public class AttendingDAO {
 
     public List<Course> getStudentCourses(List<Course> courseList, List<Attending> attending, String studentEmail) {
 
-        List<Course> studentCourseList =new ArrayList<>();
+        ArrayList<Course> studentCourseList =new ArrayList<>();
         for (Course c : courseList) {
 
             for (Attending a : attending) {
@@ -72,7 +72,7 @@ public class AttendingDAO {
         try{
             FileWriter overWrite = new FileWriter(attendingFile,true);
                 for(Attending change : attending){
-                    overWrite.write(String.format("%s,%s,%s\r\n" ,change.getCourseID(), change.getStudentEmail()));
+                    overWrite.write(change.getCourseID()+","+ change.getStudentEmail());
 
                 }
             overWrite.close();

@@ -19,7 +19,7 @@ public class StudentDAO {
              Scanner studentReader = new Scanner(sFile);
 
              while(studentReader.hasNextLine()){
-                 String[]allStudents = studentReader.nextLine().trim().split(",");
+                 String[]allStudents = studentReader.nextLine().split(",");
                  Student s = new Student(allStudents[0],allStudents[1],allStudents[2]);
                  sList.add(s);
 

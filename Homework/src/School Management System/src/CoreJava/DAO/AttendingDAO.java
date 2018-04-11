@@ -46,6 +46,7 @@ public class AttendingDAO {
                 newStudent.setCourseID(courseID);
                 newStudent.setStudentEmail(studentEmail);
                 attending.add(newStudent);
+                saveAttending(attending);
 
         }
     }

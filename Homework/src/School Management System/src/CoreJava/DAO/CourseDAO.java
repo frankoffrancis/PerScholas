@@ -19,7 +19,7 @@ public class CourseDAO {
             Scanner courseReader  = new Scanner(courseFile);
             while(courseReader.hasNextLine()){
 
-                String[] allCourses = courseReader.nextLine().trim().split(",");
+                String[] allCourses = courseReader.nextLine().split(",");
                 Course c = new Course (Integer.parseInt(allCourses[0]),allCourses[1],allCourses[2]);
                 courseList.add(c);
 

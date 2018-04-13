@@ -1,8 +1,8 @@
 package cartSystemExample;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
+        import java.io.FileNotFoundException;
+        import java.io.IOException;
+        import java.util.HashMap;
 
 public class AppSystem extends TheSystem {
     public AppSystem() throws FileNotFoundException {
@@ -20,8 +20,8 @@ public class AppSystem extends TheSystem {
 
     public Boolean add(Item item)  {
         //Fill the code here
-        boolean isAdded = true;
-        
+        boolean isAdded = false;
+
         while(isAdded) {
             if (this.getItemCollection().containsKey(item.getItemName())) {
 
@@ -32,7 +32,7 @@ public class AppSystem extends TheSystem {
             }
             else {
                 this.add(item);
-                  isAdded=false;
+                isAdded=false;
             }
         }
         return isAdded;

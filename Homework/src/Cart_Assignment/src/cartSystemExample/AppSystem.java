@@ -21,22 +21,17 @@ public class AppSystem extends TheSystem {
     public Boolean add(Item item)  {
         //Fill the code here
         boolean isAdded = true;
-        TheSystem  newAddition = null;
-        try {
-            newAddition = new TheSystem();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        
         while(isAdded) {
-            if (getItemCollection().containsKey(item.getItemName())) {
+            if (this.getItemCollection().containsKey(item.getItemName())) {
 
                 System.out.println("Item "+item.getItemName()+ " is already in the system");
 
                 isAdded= false;
-                
-            } 
+
+            }
             else {
-                newAddition.getItemCollection().put(item.getItemName(),item);
+                this.add(item);
                   isAdded=false;
             }
         }

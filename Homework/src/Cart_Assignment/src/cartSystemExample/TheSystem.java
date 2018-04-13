@@ -53,7 +53,7 @@ public class TheSystem {
         //Fill the code here
 
 
-        return new HashMap<>(itemCollection);
+        return new HashMap<String, Item>(itemCollection);
     }
 
     public void setItemCollection(HashMap<String, Item> copy) {

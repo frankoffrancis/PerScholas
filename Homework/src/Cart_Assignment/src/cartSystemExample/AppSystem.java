@@ -9,11 +9,13 @@ public class AppSystem extends TheSystem {
 
     }
     public void display() {
+
         HashMap<String, Item> current = this.getItemCollection();
         //Fill the code here
         for(Item s : current.values()){
+         Integer itemAvailable= s.getAvailableQuatity();
             System.out.println("The current available choices are "+s.getItemName()+" "+s.getItemDesc()+
-                    " "+s.getItemPrice()+""+s.getQuatity());
+                    " "+s.getItemPrice()+""+s.getAvailableQuatity());
         }
 
     }
@@ -22,7 +24,6 @@ public class AppSystem extends TheSystem {
         //Fill the code here
         boolean isAdded = false;
 
-        while(isAdded) {
             if (this.getItemCollection().containsKey(item.getItemName())) {
 
                 System.out.println("Item "+item.getItemName()+ " is already in the system");
@@ -31,9 +32,10 @@ public class AppSystem extends TheSystem {
 
             }
             else {
-                this.add(item);
-                isAdded=false;
-            }
+                HashMap<String, Item> addItems = this.getItemCollection();
+                addItems.put(item.getItemName(),item);
+                this.setItemCollection(addItems);
+                isAdded=true;
         }
         return isAdded;
     }

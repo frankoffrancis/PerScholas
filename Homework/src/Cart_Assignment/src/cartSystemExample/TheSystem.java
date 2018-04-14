@@ -22,7 +22,7 @@ public class TheSystem {
                     String line = readingItemsFile.readLine();
 
                     Item item = readingFromLine(line);
-                    System.out.println(item);
+                  itemCollection.put(item.getItemName(),item);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -34,12 +34,11 @@ public class TheSystem {
 
     private Item readingFromLine(String line) {
 
-        String[] holdingOptions = line.split("  ");
+        String[] holdingOptions = line.split("\\s ");
         Item options = new Item();
         options.setItemName(holdingOptions[0]);
         options.setItemDesc(holdingOptions[1]);
 
-        System.out.println(holdingOptions[2]);
         options.setItemPrice(Double.parseDouble(holdingOptions[2]));
 
 

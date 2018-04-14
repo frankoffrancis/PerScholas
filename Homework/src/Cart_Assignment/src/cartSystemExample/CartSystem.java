@@ -18,8 +18,8 @@ public class CartSystem extends TheSystem{
             tax = subTotal*.05;
             total = tax+subTotal;
 
-
-            System.out.println(item.getValue().getItemName()+"    "+item.getValue().getQuatity()+"    "+"    "+subTotal +"   "+tax +"   "+total);
+            System.out.printf("|%20s%20s%20s%20s%20s  | ","Item Name", "Item Quantity","Sub Total","Tax","Total"); 
+            System.out.printf("|%20s%20s%20s%20s%20s  | ",item.getValue().getItemName(),item.getValue().getQuatity(),+subTotal ,tax ,total);
 
         }
         System.out.println();

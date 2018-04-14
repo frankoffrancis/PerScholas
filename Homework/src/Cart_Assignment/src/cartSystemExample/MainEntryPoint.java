@@ -1,4 +1,4 @@
-/*
+
 package cartSystemExample;
 
 import java.io.FileNotFoundException;
@@ -79,4 +79,4 @@ public class MainEntryPoint
         System.out.println("7. Quit");
     }
 }
-*/
+

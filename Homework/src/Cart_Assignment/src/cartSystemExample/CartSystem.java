@@ -16,10 +16,10 @@ public class CartSystem extends TheSystem{
         for(Map.Entry<String, Item> item: this.getItemCollection().entrySet()){
             subTotal = item.getValue().getQuatity()* item.getValue().getItemPrice();
             tax = subTotal*.05;
-            taxPlusSubtotal = tax+subTotal;
-            total +=taxPlusSubtotal;
+            total = tax+subTotal;
 
-            System.out.println(item.getKey()+"    "+item.getValue().getItemDesc()+"    "+item.getValue().getQuatity()+"    "+taxPlusSubtotal);
+
+            System.out.println(item.getValue().getItemName()+"    "+item.getValue().getQuatity()+"    "+"    "+subTotal +"   "+tax +"   "+total);
 
         }
         System.out.println();

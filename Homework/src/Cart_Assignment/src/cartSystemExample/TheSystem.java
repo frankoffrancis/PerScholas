@@ -62,11 +62,14 @@ public class TheSystem {
 
     public Boolean add(Item item) {
         //Fill the code here
-        if (this.itemCollection.containsKey(item.getItemName())) {
-            Item Curernt = itemCollection.get(item.getItemName());
-            if (Curernt.getAvailableQuatity() <= Curernt.getQuatity()) {
+        if (itemCollection.containsKey(item.getItemName())) {
+
+            if (item.getAvailableQuatity() <= item.getQuatity()) {
+
                 return false;
             } else {
+                int quantity = item.getQuatity();
+                itemCollection.get(item.getItemName()).setQuatity(quantity+1);
                 return true;
             }
 

@@ -62,14 +62,16 @@ public class TheSystem {
 
     public Boolean add(Item item) {
         //Fill the code here
+
         if (itemCollection.containsKey(item.getItemName())) {
 
-            if (item.getAvailableQuatity() <= item.getQuatity()) {
-
-                return false;
-            } else {
+            if (checkAvailability(item, item.getQuatity())) {
                 int quantity = item.getQuatity();
                 itemCollection.get(item.getItemName()).setQuatity(quantity+1);
+                System.out.println("Item has been added");
+                return false;
+            } else {
+
                 return true;
             }
 
@@ -83,7 +85,8 @@ public class TheSystem {
         //Fill the code here
         if (itemCollection.containsKey(itemName)) {
             return itemCollection.remove(itemName);
-        } else {
+        }
+        else {
 
              Item item = null;
 

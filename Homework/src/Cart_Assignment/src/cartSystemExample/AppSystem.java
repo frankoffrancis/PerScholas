@@ -26,7 +26,7 @@ public class AppSystem extends TheSystem {
 
 
 
-            if (this.getItemCollection().containsKey(item.getItemName().toUpperCase())) {
+            if (this.getItemCollection().containsKey(item.getItemName())) {
 
                 System.out.println("Item " + item.getItemName() + " is already in the system");
 

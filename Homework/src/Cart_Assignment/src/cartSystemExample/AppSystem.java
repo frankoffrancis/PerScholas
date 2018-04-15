@@ -1,7 +1,6 @@
 package cartSystemExample;
 
         import java.io.FileNotFoundException;
-        import java.io.IOException;
         import java.util.HashMap;
 
 public class AppSystem extends TheSystem {
@@ -23,15 +22,18 @@ public class AppSystem extends TheSystem {
 
     public Boolean add(Item item) {
         //Fill the code here
-        boolean isAdded = false;
+        boolean isAdded ;
 
-        if (this.getItemCollection().containsKey(item.getItemName())) {
 
-            System.out.println("Item " + item.getItemName() + " is already in the system");
 
-            isAdded = false;
 
-        }
+            if (this.getItemCollection().containsKey(item.getItemName().toUpperCase())) {
+
+                System.out.println("Item " + item.getItemName() + " is already in the system");
+
+                isAdded = false;
+
+            }
 
             HashMap<String, Item> addItems = this.getItemCollection();
             addItems.put(item.getItemName(), item);

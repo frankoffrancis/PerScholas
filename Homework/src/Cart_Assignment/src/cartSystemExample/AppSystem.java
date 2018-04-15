@@ -13,7 +13,6 @@ public class AppSystem extends TheSystem {
         HashMap<String, Item> current = this.getItemCollection();
         //Fill the code here
         for (Item s : current.values()) {
-            Integer itemAvailable = s.getAvailableQuatity();
             System.out.println("The current available choices are " + s.getItemName() + " " + s.getItemDesc() +
                     " " + s.getItemPrice() + "" + s.getAvailableQuatity());
         }

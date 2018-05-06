@@ -73,7 +73,7 @@ public class InstructorDAO implements InstructorDAOI{
 			result= stmt.executeQuery();
 			
 			if(result!=null && result.next()) {
-				
+				teacher = new Instructor();
 				teacher.setInstructor_id(result.getInt(1));
 				teacher.setFull_name(result.getString(2));
 				teacher.setEmail(result.getString(3));

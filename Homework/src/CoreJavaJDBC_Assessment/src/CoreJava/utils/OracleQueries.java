@@ -12,8 +12,8 @@ public class OracleQueries {
 	
 	public static final String GETALLCOURSES = "select * from course"; 
 	
-	public static final String GETCOURSESBYINSTRUCTORID = "select * from  course "
-			+ "inner join teaching on course.course_id = teaching.course_id "
+	public static final String GETCOURSESBYINSTRUCTORID = "select distinct COURSE.COURSE_ID, COURSE.COURSE_NAME, COURSE.MINIMUN_GPA from  course "
+			+ " join teaching on course.course_id = teaching.course_id "
 			+ "where teaching.instructor_id = ?";
 	
 	public static final String REGISTERSTUDENTTOCOURSE = "insert into attending "

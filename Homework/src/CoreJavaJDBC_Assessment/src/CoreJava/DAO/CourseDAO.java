@@ -66,6 +66,7 @@ public class CourseDAO implements CourseDAOI {
 		OracleConnection connecting = new OracleConnection();
 		try {
 			conn = connecting.getConnection();
+			stmt= conn.prepareStatement(OracleQueries.GETCOURSESBYINSTRUCTORID);
 			stmt.setInt(1, instructor_id);
 			result = stmt.executeQuery();
 			courses = new Course();
@@ -76,6 +77,8 @@ public class CourseDAO implements CourseDAOI {
 				courses.setCourse_name(result.getString(2));
 				courses.setMinimum_gpa(result.getDouble(3));
 				allCourse.add(courses);
+				
+
 				
 			}
 			

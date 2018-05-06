@@ -25,5 +25,11 @@ public class OracleQueries {
 			+ "inner join instructor on teaching.instructor_id = instructor.instructor_id "
 			+ "where attending.student_id = ? ";
 	
+	public static final String ASSIGNTEACHERTOCOURSE  = "INSERT into teaching (course_id, instructor_id) "
+			+ "values(?,?)"; 
+	
+	public static final String GETTEACHER = "select * from teaching "
+			+ "inner join teaching on instructor.instructor_id = teaching.instructor_id "
+			+ "inner join course on teaching.course_id = course.course_id";
 	
 }

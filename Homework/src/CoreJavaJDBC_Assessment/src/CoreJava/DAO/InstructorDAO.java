@@ -30,6 +30,7 @@ public class InstructorDAO implements InstructorDAOI{
 			stmt = conn.prepareStatement(OracleQueries.GETALLINSTRUCTOR);
 			result = stmt.executeQuery();
 			listOfTeachers= new ArrayList<Instructor>();
+			teacher = new Instructor();
 			while(result!=null && result.next()) {
 				teacher.setInstructor_id(result.getInt(1));
 				teacher.setFull_name(result.getString(2));

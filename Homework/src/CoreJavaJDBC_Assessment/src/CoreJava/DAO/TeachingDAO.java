@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import CoreJava.Models.Teaching;
@@ -59,8 +60,8 @@ public class TeachingDAO  implements TeachingDAOI{
 			stmt = conn.prepareStatement(OracleQueries.GETTEACHER);
 			result =stmt.executeQuery();
 			Teaching teach = new Teaching();
-			
-			while(result!=null && result.next()) {
+			listOfTeacher = new ArrayList<Teaching>();
+			while( result.next()) {
 				
 				teach.setCourse_name(result.getString(1));
 				teach.setMinimum_gpa(result.getDouble(2));

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>
+		Television Page
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/sitecolor.css">
+<script type="text/javascript" src="siteScript.js"></script>
+</head>
+<body onload="initPage()">
+
+<ul>
+		<li><a href="home.html"> Home</a> </li>
+		<li><a href="manga.html">Manga</a> </li>
+		<li><a href="television.html"> Television</a> </li>
+		<li><a href="education.html"> Education</a> </li>
+		
+	</ul>
+	<div id="imgViewer">
+				<div id="titlebar">
+					<span id="title"></span>
+
+					<div id="closer" onclick="closeViewer()">X</div>
+				</div>
+				<div id="content" class="content">
+					
+						<img id="image" style="width:50%;float:left" onclick="closeViewer()"/>
+						<h1> Television  name :  </h1>
+					<h2> Director name: </h2>
+					<h2> Summary: </h2>
+					</p>
+				</div>
+			</div>
+
+	<div class="picRow">
+		<div class="picColumn"> <img src="Images/banshee.jpg" style="width: 100%"></div>
+	<div class="picColumn"> <img src="Images/wire.jpg" style="width: 100%"></div>
+		<div class="picColumn"> <img src="Images/99.jpg" style="width: 100%"></div>
+	</div>
+		<div class="picRow">
+		<div class="picColumn"> <img src="Images/west.jpg" style="width: 100%"></div>
+	<div class="picColumn"> <img src="Images/lie.jpg" style="width: 100%"></div>
+		<div class="picColumn"> <img src="Images/bow.jpg" style="width: 100%"></div>
+	</div>
+</body>
+</html>

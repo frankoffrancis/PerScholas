@@ -2,6 +2,7 @@ package Test;
 
 import static org.junit.Assert.*;
 
+import org.aspectj.lang.annotation.Before;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
@@ -15,26 +16,32 @@ import java.util.ArrayList;
 import java.util.List;
 public class CategoryDAOTest {
 
+	private CategoryDAO categoryDAO = new CategoryDAO();
+	private Category category = new Category();
+	private Category category2 = new Category();
+	private List<Category>listOfCategory = new ArrayList<Category>();
+
+	@Before
+	public void testPrep() {
+		category.setCategoryID(1);
+		category.setCategoryName("Home");
+		category2.setCategoryID(2);
+		category2.setCategoryName("Eating");
+		c
+		listOfCategory.add(category);
+		listOfCategory.add(category2);
+	}
 	@Test
 	public void getAllCategoryTest() throws SQLException {
-		CategoryDAO categoryDAO = new CategoryDAO();
-		Category category = new Category();
-		List<Category>listOfCategory = new ArrayList<Category>();
-		listOfCategory= categoryDAO.getallCategory();
-		listOfCategory.add(category);
-		String  apple = listOfCategory.toArray().toString();
-		String []cat = {"business","outdoor","casual"};
-		assertThat(cat, equalTo(apple.toString()));
+		
+		
+		assertThat(categoryDAO.getCategoryByID(1) equalsTo(listOfCategory));
+		}
 	}
 	
 	@Test
-	public void getCategoryByName() throws SQLException {
-		CategoryDAO categoryDAO = new CategoryDAO();
-		Category category = new Category();
-		category =categoryDAO.getCategoryByName("business");
-		String caetgoryName = "business";
-		int id = 1;
-		assertThat(id, equalTo(category.getCategoryID()));
+	public void getCategoryByID() throws SQLException {
+		assertThat(categoryDAO.getCategoryByID(1),equalsTo("Home"));
 		
 	}
 }

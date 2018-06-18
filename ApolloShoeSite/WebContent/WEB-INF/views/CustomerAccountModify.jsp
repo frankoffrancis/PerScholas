@@ -13,7 +13,7 @@
 <%@page import="apollo.dao.CustomerDAO"%>
 <%Customer cus = (Customer)session.getAttribute("customerkey");  %>
 <h1>Change User's Information</h1>
-	<form action="updatePassword" method = RequestMethod.POST >
+	<form action="updatePassword" method="POST" >
 		<div class="sub_field">
 			<label>Old Password</label> 
 			<input type="text" id="password" name="password" placeholder="Current Password Here" > 

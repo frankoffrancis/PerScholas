@@ -13,15 +13,57 @@ import apollo.model.Shoes;
 
 public class ShoeDAOTest {
 
-/*	
+	private ShoesDAO shoesDAO = new ShoesDAO();
+	private List<Shoes> listShoes = new ArrayList<Shoes> ();
+	private Shoes shoe = new Shoes();
+	
+	private Shoes shoe2 = new Shoes();
+	private Shoes shoe3 = new Shoes();
+	private Shoes shoe4 = new Shoes();
+	@Before
+	public void testPrep() {
+		shoe.setShoeID(1);
+		shoe.setCategoryName("home");
+		shoe.setGender("male");
+		shoe.setPrice(185.65);
+		shoe.setShoeName("nike");
+		shoe.setShoeSize(5);
+		
+		shoe2.setShoeID(2);
+		shoe2.setCategoryName("inside");
+		shoe2.setGender("female");
+		shoe2.setPrice(15.65);
+		shoe2.setShoeName("betas");
+		shoe2.setShoeSize(6);
+		
+		shoe3.setShoeID(3);
+		shoe3.setCategoryName("jet");
+		shoe3.setGender("male");
+		shoe3.setPrice(151.65);
+		shoe3.setShoeName("lake");
+		shoe3.setShoeSize(14);
+		
+		shoe4.setShoeID(4);
+		shoe4.setCategoryName("tom");
+		shoe4.setGender("female");
+		shoe4.setPrice(11.65);
+		shoe4.setShoeName("elf");
+		shoe4.setShoeSize(12);
+		
+		listShoes.add(shoe);
+		listShoes.add(shoe2);
+		listShoes.add(shoe3);
+		listShoes.add(shoe4);
+	}
+	
 	@Test
 	public void getAllShoesByGenderTest() throws SQLException {
-		ShoesDAO shoesDAO = new ShoesDAO();
-		List<Shoes> listShoes = new ArrayList<Shoes> ();
+		
+		
 		
 		listShoes = shoesDAO.getAllShoesByGender("male");
 		for(Shoes s  : listShoes) {
-		System.out.println(s.getShoeName()+" "+ s.getCategoryName()+  " "+s.getShoeSize()+" "+s.getGender());
+		assetThat(s,!equalTo(null) );
 	}
 	}
 	
@@ -36,40 +78,35 @@ public class ShoeDAOTest {
 		
 		listShoes = shoesDAO.getAllShoes();
 		for(Shoes s  : listShoes) {
-		System.out.println(s.getShoeName()+" "+ s.getCategoryName()+  " "+s.getShoeSize()+" "+s.getGender());
+		assertThat(s,!equalTo(null));
 		}
 	}
 	
 
 		
-	*/
-/*	@Test
+	
+	@Test
 	public void getALLShoeByPriceRangeTest() throws SQLException {
-		ShoesDAO shoesDAO = new ShoesDAO();
-		Shoes shoes = new Shoes();
-		List<Shoes> listShoes = new ArrayList<Shoes> ();
-		listShoes = shoesDAO.getAllShoesByPriceRange(100);
+		 
+		
+		List<Shoes> allShoes = new ArrayList<Shoes> ();
+		 allShoes = shoesDAO.getAllShoesByPriceRange(10);
 		
 		listShoes.add(shoes);
-		for(Shoes s  : listShoes) {
-			System.out.println(s.getShoeName()+" "+s.getPrice()+" "+s.getGender());
+		for(Shoes s  : allShoes) {
+			assertThat(s,!equalTo(null));
 		}
 		
 		
-	}*/
+	}
 	@Test
 	public void getALLShoeByID() throws SQLException {
-		ShoesDAO shoesDAO = new ShoesDAO();
-		List<Shoes> listShoes = new ArrayList<Shoes> ();
-		listShoes = shoesDAO.getAllShoesByCategoryID(2);
-		Shoes s;
-		s = listShoes.get(0);
-		//for(Shoes s  : listShoes) 
-		System.out.println(s.getShoeName()+" "+s.getPrice()+" "+s.getGender());
-		s = listShoes.get(1);
-		System.out.println(s.getShoeName()+" "+s.getPrice()+" "+s.getGender());
+		List<Shoes> allShoes = new ArrayList<Shoes> ();
+		 allShoes = shoesDAO.getAllShoesByShoeID(1);
 		
-		
+		listShoes.add(shoes);
+		for(Shoes s  : allShoes) {
+			assertThat(s,!equalTo(null));
 		
 	}
 }

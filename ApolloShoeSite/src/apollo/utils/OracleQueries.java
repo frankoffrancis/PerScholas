@@ -51,8 +51,8 @@ public class OracleQueries {
 	
 	public final  static String GETALLCATEGORY = "select category_id, category_name from category_table ";
 	
-	public final static String GETCATEGORYBYNAME = "select category_id, category_name from category_table "
-			+ "where category_name = ? ";
+	public final static String GETCATEGORYBYID = "select category_id, category_name from category_table "
+			+ "where category_id = ? ";
 	
 	public final static String GETALLORDERSBYCUSTOMERID = "select sh.shoe_id,ca.category_name,sh.price,ord.order_quantity,ord.subtotal " + 
 			"from order_table ord " + 

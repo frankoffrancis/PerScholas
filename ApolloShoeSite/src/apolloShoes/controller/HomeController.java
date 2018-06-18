@@ -1,8 +1,6 @@
 package apolloShoes.controller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import apollo.dao.CustomerDAO;
-import apollo.dao.OrderDAO;
 import apollo.dao.ShoesDAO;
 import apollo.model.Customer;
 import apollo.model.Order;
@@ -38,7 +35,6 @@ public class HomeController {
 	private HttpSession session;
 	private Shoes shoe  = new Shoes();;
 	private Order order;
-	private Customer customer1 = new Customer();
 	@ModelAttribute("customerkey")
 	public Customer setUpUserForm() {
 		return new Customer();
@@ -100,7 +96,6 @@ public class HomeController {
 		if(customer !=null) {
 			session = req.getSession();
 			session.setAttribute("customerkey", customer);
-			
 		 mav = new ModelAndView("redirect:Customer");
 		}
 		else {
@@ -135,35 +130,21 @@ public class HomeController {
 		boolean isUpdated = customerDAO.updatePassword(customer);
 		if(isUpdated) {
 			System.out.println("Teststdftdfgfdvfsdvv");
-		mav.addObject("customer_details", customerDAO.getCustomerByID(ckey.getCustomerID()));
+		mav.addObject("user_details", customerDAO.getCustomerByID(ckey.getCustomerID()));
 		mav.setViewName("CustomerAccountModify");
 		}
 		return mav;
 	}
 
-	@RequestMapping("Shoes")
-	public ModelAndView shoePage() {
-		mav = new ModelAndView("Shoes");
-		return mav;
-	}
-	@RequestMapping(value= "Shoes", method =RequestMethod.POST)
-	public ModelAndView shoesPage(@ModelAttribute("shoekey") @Valid Shoes shoe,
-		 HttpServletRequest req ) throws SQLException {
-		mav = new ModelAndView("Shoes");
-			List<Shoes>shoesPage = new ArrayList<Shoes>();
-		shoesPage=shoesDAO.getAllShoes();
-		for(Shoes s : shoesPage) {
-			System.out.println(s.getShoeName());
-		}
-		mav.addObject("shoeList",shoesPage);
+	@RequestMapping(value= "shoes", method =RequestMethod.POST)
+	public ModelAndView shoesPage(@ModelAttribute Shoes shoes,
+			@SessionAttribute ("customerkey")Shoes ckey
+			) 
+	{
+		
+		
 	
-		return mav; 
 	}
 
-	
-	
-		}
-	
-	
-
-
+}
+}

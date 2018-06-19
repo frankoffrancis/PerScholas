@@ -13,11 +13,12 @@ public class OracleQueries {
 	public final static String UPDATECUSTOMER = "update customer "
 			+ "set user_name = ?, "
 			+ " password = ?, "
-			+ " email = ? ";
+			+ " email = ? "
+			+ "where customer_id=?";
 	public final static String GETCUSTOMERBYID = "select customer.user_name, customer.passwords, customer.email from customer "
 			+ " where customer_id = ? ";
 	
-	public final static String GETALLSHOES = "select shoe_name,  category_name, shoe_size, price, gender "
+	public final static String GETALLSHOES = "select shoe_id, shoe_name,  category_table.category_name, shoe_size, price, gender "
 			+ "from shoes "
 			+ " join category_table on shoes.CATEGORY_ID= category_table.CATEGORY_ID ";
 	
@@ -51,8 +52,8 @@ public class OracleQueries {
 	
 	public final  static String GETALLCATEGORY = "select category_id, category_name from category_table ";
 	
-	public final static String GETCATEGORYBYID = "select category_id, category_name from category_table "
-			+ "where category_id = ? ";
+	public final static String GETCATEGORYBYNAME = "select category_id, category_name from category_table "
+			+ "where category_name = ? ";
 	
 	public final static String GETALLORDERSBYCUSTOMERID = "select sh.shoe_id,ca.category_name,sh.price,ord.order_quantity,ord.subtotal " + 
 			"from order_table ord " + 

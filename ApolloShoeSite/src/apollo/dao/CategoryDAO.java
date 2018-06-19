@@ -47,7 +47,7 @@ public class CategoryDAO {
 		return listOfCategory;
 	}
 
-	public Category getCategoryByID(int id) throws SQLException {
+	public Category getCategoryByName(String categoryName) throws SQLException {
 		Category category = new Category();
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -55,8 +55,8 @@ public class CategoryDAO {
 		
 		try {
 			conn = OracleConnection.getConnection();
-			stmt = conn.prepareStatement(OracleQueries.GETCATEGORYBYID);
-			stmt.setInt(1, id);
+			stmt = conn.prepareStatement(OracleQueries.GETCATEGORYBYNAME);
+			stmt.setString(1, categoryName);
 			result = stmt.executeQuery();
 			if(result!=null && result.next()) {
 				category.setCategoryID(result.getInt(1));

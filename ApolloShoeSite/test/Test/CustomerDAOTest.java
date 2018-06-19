@@ -13,42 +13,26 @@ import apollo.model.Customer;
 
 public class CustomerDAOTest {
 	
-	private CustomerDAO customerDAO = new CustomerDAO();
-	private Customer customer = new Customer();
-	private Customer customer2 = new Customer();
-	private Customer customer3= new Customer();
-	private Customer customer4 = new Customer();
 	@Before
 	public void testPrep() {
-		customer.setCustomerID(1);
-		customer.setEmail("apple@gmail.com");
-		customer.setPassword("12345");
-		customer.setUserName("Apple");
 		
-		customer2.setCustomerID(2);
-		customer2.setEmail("Baseball@gmail.com");
-		customer2.setPassword("12345");
-		customer2.setUserName("Base");
-		
-		customer3.setCustomerID(3);
-		customer3.setEmail("Basket@gmail.com");
-		customer3.setPassword("12345");
-		customer3.setUserName("Basket");
-		
-		customer4.setCustomerID(4);
-		customer4.setEmail("Hockey@gmail.com");
-		customer4.setPassword("12345");
-		customer4.setUserName("Hockey");
 		
 	}
 	
 	@Test
 	public void gettingCustomerByIDTest() throws SQLException {
-		assertThat(customer.getCustomerID(1), equalsTo(customer));
+		Integer id = 1;
+		CustomerDAO customerDAO = new CustomerDAO();
+		Customer customer = new Customer();
+		String actualEmail= "tim@gmail.com";
+		customer =customerDAO.getCustomerByID(id);
+		
+		assertThat(actualEmail, equalTo(customer.getEmail()));
 	}
 /*	@Test
 	public void registerCustomerTest() throws SQLException {
-	
+		CustomerDAO customerDAO = new CustomerDAO();
+		//Customer customer = new Customer();
 		boolean isLoggedIn= false;
 		isLoggedIn =customerDAO.registerCustomer("kate", "kate12", "kate@gmail.com");
 		
@@ -60,7 +44,7 @@ public class CustomerDAOTest {
 		CustomerDAO customerDAO = new CustomerDAO();
 		
 		boolean isdelted = false;
-		isdelted =customerDAO.deleteCustomer(3);
+		isdelted =customerDAO.deleteCustomer(7);
 		
 		assertThat(true, equalTo(isdelted));
 		
@@ -68,28 +52,37 @@ public class CustomerDAOTest {
 	@Test
 	public void loginCustomerTest() throws SQLException {
 		CustomerDAO customerDAO = new CustomerDAO();
-		Customer logCustomer = new Customer();
-		logCustomer=customerDAO.login("Hockey@gmail.com", "12345");
-		assertThat(logCustomer.getEmail() ,equalsTo(customer4.getEmail());
-		assertThat(logCustomer.getPassword() ,equalsTo(customer4.getPassword());
-		assertThat(logCustomer.getUserName() ,equalsTo(customer4.getUserName());
+		Customer customer = new Customer();
+		customer =customerDAO.login("tim@gmail.com", "tim123");
+		String email = "tim@gmail.com";
+		String password = "tim123";
+		String userName ="tim";
+		
+		assertThat(userName, equalTo(customer.getUserName()));
+		assertThat(email, equalTo(customer.getEmail()));
+		assertThat(password, equalTo(customer.getPassword()));
 	}
 
 	@Test
 	public void validateCustomerEmailTest() throws SQLException{
-		
-		
+		CustomerDAO customerDAO = new CustomerDAO();
+		Customer customer = new Customer();
+		customer.setEmail("tim@gmail.com");
+		String email = "tim@gmail.com";
 		boolean isValid = false;
-		isValid = customerDAO.validateUserEmail(customer3.getEmail(), "Basket@gmail.com");
+		isValid = customerDAO.validateUserEmail(customer.getEmail(), email);
 		assertThat(true, equalTo(isValid));
 		
 	}
 	
 	@Test
-	public void validateCustomerUserPass() throws SQLException{
-		
+	public void validateCustomerUserNameTest() throws SQLException{
+		CustomerDAO customerDAO = new CustomerDAO();
+		Customer customer = new Customer();
+		customer.setPassword("tim123");
+		String user = "tim123";
 		boolean isValid = false;
-		isValid = customerDAO.validateUserPass(customer2.getPassword(), "12345");
+		isValid = customerDAO.validateUserPass(customer.getPassword(), user);
 		assertThat(true, equalTo(isValid));
 		
 	}
